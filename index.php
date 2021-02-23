@@ -36,7 +36,7 @@ if (isset($money)) {
     $shopping_flag = "true";
 }
 
-if ($shopping_flag !== "true"){
+if ($shopping_flag !== "true") {
     echo "無効な番号です" . PHP_EOL . "処理を終了します。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
     exit;
 } 
@@ -52,7 +52,7 @@ do {
         $rem = ($money - $price);
     }
 
-    if ($rem < 0){
+    if ($rem < 0) {
         $shopping_flag = "false";
         break;
     }
@@ -61,7 +61,7 @@ do {
 
 } while ($rem >= 0);
 
-if ($shopping_flag == "false"){
+if ($shopping_flag == "false") {
     echo "チャージ金額を上回るため購入できません。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
     exit;
 } 
