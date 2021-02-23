@@ -49,7 +49,7 @@ do {
         $rem = $rem - $price;
 
     } else {
-        $rem = ($money - $price);
+        $rem = $money - $price;
     }
 
     if ($rem < 0) {
