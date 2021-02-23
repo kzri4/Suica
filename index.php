@@ -36,7 +36,7 @@ while ($price <= $money ){
     $rem = ($money - $price);
     echo "残高は{$rem}円です。" . PHP_EOL;
 
-    if($rem < 0){
+    if ($rem < 0){
         break;
     }
 
