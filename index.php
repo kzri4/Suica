@@ -24,32 +24,18 @@ switch ($num) {
         exit;    
 }
 
-if (isset($money)) {
-    $shopping_flag = true;
-}
+$shopping_flag = true;
 
 do {
     echo "商品の価格を入力して下さい:";
     $price = trim(fgets(STDIN));
 
-    if (isset($rem)) {
-        $rem = $rem - $price;
+    if ($money - $price >= 0) {
+        $money = $money - $price;
     } else {
-        $rem = $money - $price;
-    }
-    
-    if ($rem < 0) {
         $shopping_flag = false;
-        break;
-    } elseif ($rem === 0) {
-        $shopping_flag = false;
-        echo "残高は{$rem}円です。" . PHP_EOL;
-        break;
     }
-    echo "残高は{$rem}円です。" . PHP_EOL;
-} while ($rem >= 0);
+    echo "残高は{$money}円です。" . PHP_EOL;
+} while ($shopping_flag == true);
 
-if ($shopping_flag === false) {
-    echo "チャージ金額を上回るため購入できません。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
-    exit;
-}
+echo "チャージ金額を上回るため購入できません。" . PHP_EOL . "買い物を終了します。" . PHP_EOL;
